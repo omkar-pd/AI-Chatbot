@@ -1,6 +1,7 @@
 from langchain_community.document_loaders import PyPDFLoader
 import os
 
+
 def load_documents(directory="data"):
     """Load PDF documents from the data directory."""
     documents = []
@@ -15,6 +16,7 @@ def load_documents(directory="data"):
         print("⚠️ No documents found! Please place PDFs in the 'data' folder.")
 
     return documents
+
 
 # Test document loading
 if __name__ == "__main__":
