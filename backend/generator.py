@@ -14,21 +14,24 @@ genai.configure(api_key=api_key)
 
 
 def generate_answer(query):
-    """Retrieve documents and generate an answer using Google Gemini AI."""
-    from retriever import retrieve_documents
+    # """Retrieve documents and generate an answer using Google Gemini AI."""
+    # from retriever import retrieve_documents
 
     # docs = retrieve_documents(query)
     # context = "\n".join([doc.page_content for doc in docs])
-    # prompt = f"Based on this context, answer the question:\n{context}\n\nQuestion: {query}"
+    # prompt = (
+    #     f"Based on this context, answer the question:\n{context}\n\nQuestion: {query}"
+    # )
 
-    # model = genai.GenerativeModel("gemini-pro")
+    # model = genai.GenerativeModel("gemini-1.5-flash-latest")
     # response = model.generate_content(prompt)
 
-    # return response.text
+    # # return response.text
+    # print(response)
 
     def response_stream():
         response_data = "✅ This is a hardcoded response for testing. Integration with Gemini AI is currently disabled."
-        for word in response_data.split():
+        for word in response.data.split():
             yield word + " "
             time.sleep(0.1)
 
